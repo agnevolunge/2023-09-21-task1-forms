@@ -34,17 +34,6 @@ function init () {
     const studentGroup = document.createElement('p')
     studentGroup.textContent = `Student group: ${group}.`
 
-    const programmingLanguages = document.createElement('p')
-    programmingLanguages.textContent = `Programming languages ​​of interest`
-    const programmingLanguagesList = document.createElement ('ul')
-    programmingLanguages.append(programmingLanguagesList)
-
-    languages.forEach((language) => {
-        const programmingLanguagesItem = document.createElement('li')
-        programmingLanguagesItem.textContent = languages.value
-        programmingLanguagesList.append(programmingLanguagesItem)
-    })
-
 
     const personalInfoButton = document.createElement('button');
     personalInfoButton.textContent = `Show personal info`
@@ -89,8 +78,7 @@ function init () {
         createdStudentElement.remove()
     }, 5000);
 
-    
-    
+
     studentItem.append(
         studentMainInfo,
         studentTelephoneNumber,
@@ -100,14 +88,13 @@ function init () {
         personalInfoButton,
         removeStudentButton,
     )
+    
     studentList.prepend(studentItem)
 
 
     // contactsForm(reset)
 
 });
-
-
 
 const value = document.querySelector("#value");
 const input = document.querySelector("#range-it");
@@ -116,8 +103,8 @@ input.addEventListener("input", (event) => {
   value.textContent = event.target.value;
   event.preventDefault()
 })
-
 }
+
 init()
 
 
