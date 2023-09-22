@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms-task-1</title>
+</head>
+<body>
+
+<form id="contacts-form">
+
+<div class="form-control">
+    <label for="person-name">Name:</label>
+    <input type="text" name="person-name" id="person-name" placeholder="Enter Your name ..." required value="Name">
+</div>
+
+<div class="form-control">
+    <label for="person-surname">Surname:</label>
+    <input type="text" name="surname" id="person-surname" placeholder="Enter Your surname ..." required value="Surname">
+</div>
+
+<div class="form-control">
+    <label for="person-age">Age:</label>
+    <input type="number" name="age" id="person-age" placeholder="Enter Your age ..." required value="25">
+</div>
+
+<div class="form-control">
+    <label for="tel-number">Telephone:</label>
+    <input type="tel" name="tel-number" id="tel-number" placeholder="Telephone number ...">
+</div>
+
+<div class="form-control">
+    <label for="email-address">Email:</label>
+    <input type="email" name="email-address" id="email-address" placeholder="Email ..." required value="student@mail.com">
+</div>
+
+<div class="form-control">
+    <label for="range-it">Range Your IT skils:</label>
+    <input type="range" name="range" id="range-it" min="1" max="10" step="1" value="0">
+    <span>Value: <output id="value"></output> </span>
+</div>
+
+<fieldset>
+    <legend>Select group:</legend>
+
+    <div class="form-control">
+        <input type="radio" name="group-selection" id="FEU-1" value="FEU-1">
+        <label for="FEU-1">FEU-1</label>
+    </div>
+
+    <div class="form-control">
+        <input type="radio" name="group-selection" id="FEU-2" value="FEU-2">
+        <label for="FEU-2">FEU-2</label>
+    </div>
+
+    <div class="form-control">
+        <input type="radio" name="group-selection" id="FEU-3" value="FEU-3">
+        <label for="FEU-3">FEU-3</label>
+    </div>
+
+    <div class="form-control">
+        <input type="radio" name="group-selection" id="FEU-4" value="FEU-4">
+        <label for="FEU-4">FEU-4</label>
+    </div>
+
+    <div class="form-control">
+        <input type="radio" name="group-selection" id="FEU-5" value="FEU-5">
+        <label for="FEU-5">FEU-5</label>
+    </div>
+
+    <div class="form-control">
+        <input type="radio" name="group-selection" id="FEU-6" value="FEU-6">
+        <label for="FEU-6">FEU-6</label>
+    </div>
+
+    <div class="form-control">
+        <input type="radio" name="group-selection" id="FEU-7" value="FEU-7">
+        <label for="FEU-7">FEU-7</label>
+    </div>
+
+    <div class="form-control">
+        <input type="radio" name="group-selection" id="FEU-8" value="FEU-8">
+        <label for="FEU-8">FEU-8</label>
+    </div>
+
+    <div class="form-control">
+        <input type="radio" name="group-selection" id="FEU-9" value="FEU-9">
+        <label for="FEU-9">FEU-9</label>
+    </div>
+
+    <div class="form-control">
+        <input type="radio" name="group-selection" id="FEU-10" value="FEU-10">
+        <label for="FEU-10">FEU-10</label>
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend>What programming languages You are interested in?</legend>
+
+    <div class="form-control">
+        <input type="checkbox" name="language" id="Javascript-language">
+        <label for="Javascript-language">Javascript</label>
+    </div>
+
+    <div class="form-control">
+        <input type="checkbox" name="language" id="Phyton-language">
+        <label for="Phyton-language">Python</label>
+    </div>
+
+    <div class="form-control">
+        <input type="checkbox" name="language" id="Java-language">
+        <label for="Java-language">Java</label>
+    </div>
+
+    <div class="form-control">
+        <input type="checkbox" name="language" id="php-language">
+        <label for="php-language">PHP</label>
+    </div>
+</fieldset>
+
+<input type="submit" value="Submit" id="submit-button">
+
+</form>
+
+<div id="student-list"></div>
+
+
+
+
+    <script src="forms-task-1.js"></script>
+</body>
+</html>
+
+<!-- PIRMA DALIS:
+Sukurti kontaktų formą.
+1. Kontaktų formoje turi būti šie laukeliai:
+    1. Tekstinis laukelis vardui (privalomas).
+    2. Tekstinis laukelis pavardei (privalomas).
+    3. Skaičiaus laukelis amžiui (privalomas).
+    4. Laukelis įvesti telefono numerį (neprivalomas).
+    5. Laukelis įvesti el. paštą (privalomas).
+    6. Range tipo laukelis, kuris skirtas įvertinti savo IT žinias nuo 1 iki 10. Galimas vertinimas tik sveikiems skaičiams.
+    7. Radio tipo laukeliai, kuriuose pasirenkamas grupės numeris. Turi būti galimybė pasirinkti grupes nuo FEU 1gr. iki FEU 10gr.
+    8. Checkbox tipo laukeliai, kuriuose galima pasirinkti dominančias programavimo kalbas (bent 4 skirtingi checkbox elementai).
+    9. Šalia kiekvieno įvesties (input) elemento, pridėti label elementą, kuris žymi laukelio pavadinimą. -->
+ 
