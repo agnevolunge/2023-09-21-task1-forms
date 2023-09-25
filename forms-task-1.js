@@ -13,7 +13,7 @@ function init () {
     const email = contactsForm.querySelector('#email-address').value
     const skills = contactsForm.querySelector('#range-it').value
     const group = contactsForm.querySelector('input[name="group-selection"]:checked').value
-    const languages = contactsForm.querySelectorAll('[name="language"]:checked')
+    // const languages = contactsForm.querySelectorAll('input[name="language"]:checked').value
 
     const studentItem = document.createElement('div')
     studentItem.classList.add('student-item')
@@ -33,6 +33,17 @@ function init () {
 
     const studentGroup = document.createElement('p')
     studentGroup.textContent = `Student group: ${group}.`
+
+    // const studentLanguages = document.createElement ('p')
+    // studentLanguages.textContent = `Programming languages: ${languages}.`
+
+    let studentLanguages = document.querySelectorAll ('input[name="language"]:checked');
+    let output = []
+    studentLanguages.forEach((language) => {
+        output.push(language.value)
+       
+    })
+    console.log(output)
 
 
     const personalInfoButton = document.createElement('button');
@@ -85,6 +96,7 @@ function init () {
         studentEmailAddress,
         studentItSkillsRange,
         studentGroup,
+        studentLanguages,
         personalInfoButton,
         removeStudentButton,
     )
