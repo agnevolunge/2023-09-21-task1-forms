@@ -13,7 +13,7 @@ function init () {
     const email = contactsForm.querySelector('#email-address').value
     const skills = contactsForm.querySelector('#range-it').value
     const group = contactsForm.querySelector('input[name="group-selection"]:checked').value
-    // const languages = contactsForm.querySelectorAll('input[name="language"]:checked').value
+    const interests = document.querySelectorAll ('input[name="interest"]:checked')
 
     const studentItem = document.createElement('div')
     studentItem.classList.add('student-item')
@@ -34,17 +34,20 @@ function init () {
     const studentGroup = document.createElement('p')
     studentGroup.textContent = `Student group: ${group}.`
 
-    // const studentLanguages = document.createElement ('p')
-    // studentLanguages.textContent = `Programming languages: ${languages}.`
+    const interestsWrapperElement = document.createElement('div')
+    const studentInterestTitle = document.createElement('h3')
+    studentInterestTitle.textContent = `Programming Languages:`
+    
+    const studentInterestsList = document.createElement('ul')
 
-    let studentLanguages = document.querySelectorAll ('input[name="language"]:checked');
-    let output = []
-    studentLanguages.forEach((language) => {
-        output.push(language.value)
-       
+    interests.forEach((interest) => {
+        const studentInterestItem = document.createElement('li')
+        studentInterestItem.textContent = interest.value
+        studentInterestsList.append(studentInterestItem)
+        
     })
-    console.log(output)
-
+    interestsWrapperElement.append(studentInterestTitle, studentInterestsList)
+    
 
     const personalInfoButton = document.createElement('button');
     personalInfoButton.textContent = `Show personal info`
@@ -96,7 +99,7 @@ function init () {
         studentEmailAddress,
         studentItSkillsRange,
         studentGroup,
-        studentLanguages,
+        interestsWrapperElement,
         personalInfoButton,
         removeStudentButton,
     )
@@ -104,7 +107,7 @@ function init () {
     studentList.prepend(studentItem)
 
 
-    // contactsForm(reset)
+    contactsForm.reset()
 
 });
 
