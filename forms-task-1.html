@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forms-task-1</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -11,12 +12,12 @@
 
 <div class="form-control">
     <label for="person-name">Name:</label>
-    <input type="text" name="person-name" id="person-name" placeholder="Enter Your name ..." required value="Name">
+    <input type="text" name="name" id="person-name" placeholder="Enter Your name ..." required value="Steve">
 </div>
 
 <div class="form-control">
     <label for="person-surname">Surname:</label>
-    <input type="text" name="surname" id="person-surname" placeholder="Enter Your surname ..." required value="Surname">
+    <input type="text" name="surname" id="person-surname" placeholder="Enter Your surname ..." required value="Johnson">
 </div>
 
 <div class="form-control">
@@ -26,18 +27,18 @@
 
 <div class="form-control">
     <label for="tel-number">Telephone:</label>
-    <input type="tel" name="tel-number" id="tel-number" placeholder="Telephone number ...">
+    <input type="tel" name="phone" id="tel-number" placeholder="Telephone number ..." value="+3706589654">
 </div>
 
 <div class="form-control">
     <label for="email-address">Email:</label>
-    <input type="email" name="email-address" id="email-address" placeholder="Email ..." required value="student@mail.com">
+    <input type="email" name="email" id="email-address" placeholder="Email ..." required value="student@mail.com">
 </div>
 
 <div class="form-control">
-    <label for="range-it">Range Your IT skils:</label>
-    <input type="range" name="range" id="range-it" min="1" max="10" step="1" value="2">
-    <span>Value: <output id="value"></output> </span>
+    <label for="it-knowledge">Range Your IT skils:</label>
+    <input type="range" name="it-knowledge" id="it-knowledge" min="1" max="10" step="1" value="2">
+    <span id="it-knowledge-output"></span>
 </div>
 
 <fieldset>
@@ -98,7 +99,7 @@
     <legend>What programming languages You are interested in?</legend>
 
     <div class="form-control">
-        <input type="checkbox" name="interest" id="Javascript-language" value="Javasript-language" >
+        <input type="checkbox" name="interest" id="Javascript-language" value="Javascript-language" >
         <label for="Javascript-language">Javascript</label>
     </div>
 
@@ -121,6 +122,8 @@
 <input type="submit" value="Submit" id="submit-button">
 
 </form>
+
+<span id="alert-message"></span>
 
 <div id="student-list"></div>
 
