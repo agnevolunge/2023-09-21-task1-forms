@@ -3,9 +3,9 @@ const initialData = [
        name: 'Steve',
        surname: 'Doe', 
        age: 25,
-       telephone: '+37069856365',
+       phone: '+37069856365',
        email: 'steve@doe.com',
-       skills: 4,
+       itKnowledge: 4,
        group: 'FEU-1',
        interests: ['javascript', 'phyton', 'php']
     },
@@ -13,9 +13,9 @@ const initialData = [
         name: 'John',
         surname: 'Stewart', 
         age: 19,
-        telephone: '+37065936365',
+        phone: '+37065936365',
         email: 'john@stewart.com',
-        skills: 6,
+        itKnowledge: 6,
         group: 'FEU-2',
         interests: ['php', 'java']
      },
@@ -23,9 +23,9 @@ const initialData = [
         name: 'Henry',
         surname: 'Thomson', 
         age: 22,
-        telephone: '+3456982365',
+        phone: '+3456982365',
         email: 'henry@thomson.com',
-        skills: 9,
+        itKnowledge: 9,
         group: 'FEU-3',
         interests: ['java']
      },
@@ -33,9 +33,9 @@ const initialData = [
         name: 'Peter',
         surname: 'Scott', 
         age: 20,
-        telephone: '+34369582365',
+        phone: '+34369582365',
         email: 'peter@scott.com',
-        skills: 8,
+        itKnowledge: 8,
         group: 'FEU-4',
         interests: ['phyton']
      },
@@ -43,9 +43,9 @@ const initialData = [
         name: 'Thom',
         surname: 'Johnson', 
         age: 23,
-        telephone: '+34369982365',
+        phone: '+34369982365',
         email: 'thom@johnson.com',
-        skills: 7,
+        itKnowledge: 7,
         group: 'FEU-5',
         interests: ['javascript', 'java']
      },
@@ -53,8 +53,9 @@ const initialData = [
 
 
 
-function init () {
+function init (initialData) {
     rangeOutputDisplay()
+    renderInitialData(initialData)
     
     const contactsForm = document.querySelector('#contacts-form')
    
@@ -71,6 +72,59 @@ function init () {
     const itKnowledge = form.elements['it-knowledge'].value
     const group = form.elements['group-selection'].value
     const interests = form.querySelectorAll('input[name="interest"]:checked')
+
+    const interestsData = []
+    interests.forEach(interest => {
+        interestsData.push(interest.value)
+    })
+
+    // const student = {
+    //     name: name,
+    //     surname: surname,
+    //     age: age,
+    //     phone: phone,
+    //     email: email,
+    //     itKnowledge: itKnowledge,
+    //     group: group,
+    //     interests: interests
+    // }
+    const studentData = {
+        name,
+        surname,
+        age,
+        phone,
+        email,
+        itKnowledge,
+        group,
+        interests: interestsData,
+    }
+
+    renderSingleStudent(studentData)
+
+    form.reset()
+
+
+    alertMessage(`New student (${name} ${surname}) created.`, 'success')
+   
+    rangeOutputDisplay()
+    })
+}
+init(initialData)
+
+
+function renderInitialData(studentsData) {
+    studentsData.forEach(student => renderSingleStudent (student))
+}
+
+function renderSingleStudent (student){
+    const name = student.name
+    const surname = student.surname
+    const age = student.age
+    const phone = student.phone
+    const email = student.email
+    const itKnowledge = student.itKnowledge
+    const group = student.group
+    const interests = student.interests
 
 
     const studentList = document.querySelector('#student-list')
@@ -101,8 +155,9 @@ function init () {
     const studentInterestsList = document.createElement('ul')
 
     interests.forEach((interest) => {
+        console.log(interest)
         const studentInterestItem = document.createElement('li')
-        studentInterestItem.textContent = interest.value
+        studentInterestItem.textContent = interest
         studentInterestsList.append(studentInterestItem)
     })
     interestsWrapperElement.append(studentInterestTitle, studentInterestsList)
@@ -140,17 +195,7 @@ function init () {
     studentItem.append(studentMainInfo, studentPhoneNumber, studentEmailAddress, studentItKnowledge, studentGroup, interestsWrapperElement, personalInfoButton, removeStudentButton)
 
     studentList.prepend(studentItem)
-
-    form.reset()
-
-
-    alertMessage(`New student (${name} ${surname}) created.`, 'success')
-   
-    rangeOutputDisplay()
-    })
 }
-init()
-
 
 function alertMessage(text, elementClass) {
     const alertMessageElement = document.querySelector('#alert-message')
